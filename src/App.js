@@ -3,7 +3,7 @@ import Persons from './components/Persons'
 import PersonForm from './components/PersonForm'
 import personService from './services/persons'
 import Notification from './components/Notifications'
-
+import './styles.css'
 
 
 const App = () => {  
@@ -91,7 +91,7 @@ const App = () => {
 
 
   return (
-  <section>
+  <section style={mainStyles}>
       <div>
         <h2 style={Title}>PhoneBook</h2>
         <Notification message={errorMessage} />
@@ -102,7 +102,7 @@ const App = () => {
           newName={newName}
           newNumber={newNumber}
         />
-        <h3>Numbers</h3>
+        <h3 style={secondTitle}>Contacts</h3>
         <Persons persons={persons} handleDelete={handleDelete}/>
       </div>
   </section>
@@ -112,6 +112,9 @@ const App = () => {
 
 const mainStyles = {
   fontFamily: 'Inter',
+  color: '#fff',
+  maxWidth: '800px',
+  margin: '0 auto',
 }
 
 const Title = {
@@ -121,4 +124,7 @@ const Title = {
   fontWeight: 400,
 }
 
+const secondTitle = {
+  paddingTop: '24px',
+}
 export default App
